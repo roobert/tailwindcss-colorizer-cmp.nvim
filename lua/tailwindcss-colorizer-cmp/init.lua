@@ -3,7 +3,10 @@ M = {}
 M.formatter = function(entry, vim_item)
   local max_width = lvim.builtin.cmp.formatting.max_width
 
-  print("hello")
+
+
+  print(max_width)
+  print(vim_item.abbr)
 
   if max_width ~= 0 and #vim_item.abbr > max_width then
     vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. lvim.icons.ui.Ellipsis
