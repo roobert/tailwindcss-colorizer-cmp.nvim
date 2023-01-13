@@ -2,7 +2,7 @@ M = {}
 
 M.formatter = function(entry, vim_item)
   -- FIXME:
-  -- * support lunarvim default cmp config until we can work out how to chain
+  -- * we support lunarvim default cmp config until we can work out how to chain
   --   formatters..
   if lvim then
     local max_width = 0
@@ -42,6 +42,7 @@ M.formatter = function(entry, vim_item)
 
     -- FIXME:
     -- * work out how to access this stuff rather than making local copies..
+    -- * this could be as simple as a load-order problem?
     -- vim_item.menu = lvim.builtin.cmp.formatting.source_names[entry.source.name]
     -- vim_item.dup = lvim.builtin.cmp.formatting.duplicates[entry.source.name]
     --     or lvim.builtin.cmp.formatting.duplicates_default
@@ -71,7 +72,6 @@ M.formatter = function(entry, vim_item)
     local duplicates_default = 0
 
     vim_item.dup = duplicates[entry.source.name] or duplicates_default
-
   end
 
   if vim.tbl_contains({ 'nvim_lsp' }, entry.source.name) then
