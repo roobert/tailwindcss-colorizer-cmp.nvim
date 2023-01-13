@@ -1,4 +1,4 @@
-# TailwindCSS Colorizer CMP
+# :rainbow: TailwindCSS Colorizer CMP
 
 ![tailwindcss-colorizer-cmp.nvim Screenshot](https://user-images.githubusercontent.com/226654/212398203-a4d09543-e313-46db-b6b8-a3d8c6ad4e78.gif)
 
