@@ -34,7 +34,35 @@ M.formatter = function(entry, vim_item)
       vim_item.kind = lvim.icons.misc.Smiley
       vim_item.kind_hl_group = "CmpItemKindEmoji"
     end
+
   end
+
+  local source_names = {
+    nvim_lsp = "(LSP)",
+    emoji = "(Emoji)",
+    path = "(Path)",
+    calc = "(Calc)",
+    cmp_tabnine = "(Tabnine)",
+    vsnip = "(Snippet)",
+    luasnip = "(Snippet)",
+    buffer = "(Buffer)",
+    tmux = "(TMUX)",
+    copilot = "(Copilot)",
+    treesitter = "(TreeSitter)",
+  }
+
+  vim_item.menu = source_names[entry.source.name]
+
+  local duplicates = {
+    buffer = 1,
+    path = 1,
+    nvim_lsp = 0,
+    luasnip = 1,
+  }
+
+  local duplicates_default = 0
+
+  vim_item.dup = duplicates[entry.source.name] or duplicates_default
 
   -- vim_item.menu = lvim.builtin.cmp.formatting.source_names[entry.source.name]
   -- vim_item.dup = lvim.builtin.cmp.formatting.duplicates[entry.source.name]
