@@ -7,7 +7,7 @@ M.formatter = function(entry, vim_item)
       table.insert(words, word)
     end
 
-    if #words > 3 or #words > 4 then
+    if #words < 3 or #words > 4 then
       return vim_item
     end
 
