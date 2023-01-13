@@ -1,6 +1,5 @@
 M = {}
 
-
 M.formatter = function(entry, vim_item)
   if vim.tbl_contains({ 'nvim_lsp' }, entry.source.name) then
     if vim_item.kind ~= "Color" then
