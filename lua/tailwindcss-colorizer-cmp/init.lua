@@ -8,7 +8,7 @@ M.formatter = function(entry, vim_item)
   end
 
   if lvim.use_icons then
-    vim_item.kind = lvim.builtin.cmp.formatting.kind_icons[vim_item.kind]
+    vim_item.kind = lvim.icons.kind[vim_item.kind]
 
     if entry.source.name == "copilot" then
       vim_item.kind = lvim.icons.git.Octoface
@@ -36,9 +36,9 @@ M.formatter = function(entry, vim_item)
     end
   end
 
-  vim_item.menu = lvim.builtin.cmp.formatting.source_names[entry.source.name]
-  vim_item.dup = lvim.builtin.cmp.formatting.duplicates[entry.source.name]
-      or lvim.builtin.cmp.formatting.duplicates_default
+  -- vim_item.menu = lvim.builtin.cmp.formatting.source_names[entry.source.name]
+  -- vim_item.dup = lvim.builtin.cmp.formatting.duplicates[entry.source.name]
+  --     or lvim.builtin.cmp.formatting.duplicates_default
 
   if vim.tbl_contains({ 'nvim_lsp' }, entry.source.name) then
     local words = {}
