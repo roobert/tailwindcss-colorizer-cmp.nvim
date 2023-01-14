@@ -9,13 +9,29 @@ A Neovim plugin to add [vs-code-style TailwindCSS color hints](https://tailwindc
 ### Packer.nvim
 
 ``` lua
-use({ "roobert/tailwindcss-colorizer-cmp.nvim" })
+use({
+  "roobert/tailwindcss-colorizer-cmp.nvim",
+  -- optionally, override the default options:
+  config = function()
+    require("tailwindcss-colorizer-cmp").setup({
+      color_square_width = 2,
+    })
+  end
+})
 ```
 
 ### Lazy.nvim
 
 ``` lua
-{ "roobert/tailwindcss-colorizer-cmp.nvim" }
+{
+  "roobert/tailwindcss-colorizer-cmp.nvim",
+  -- optionally, override the default options:
+  config = function()
+    require("tailwindcss-colorizer-cmp").setup({
+      color_square_width = 2,
+    })
+  end
+}
 ```
 
 ## :hammer_and_wrench: Usage
