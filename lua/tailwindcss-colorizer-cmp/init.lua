@@ -85,7 +85,7 @@ M.formatter = function(entry, vim_item)
     end
 
     local color_name, color_number
-    if words[2] == "x" or words[2] == "y" then
+    if words[2] == "x" or words[2] == "y" or words[2] == "t" or words[2] == "b" or words[2] == "l" or words[2] == "r" then
       color_name = words[3]
       color_number = words[4]
     else
