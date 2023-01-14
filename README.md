@@ -40,7 +40,7 @@ use({
 
 ``` lua
 require("cmp").config.formatting = {
-    format = require("tailwindcss-colorizer-cmp").formatter
+  format = require("tailwindcss-colorizer-cmp").formatter
 }
 ```
 
@@ -48,6 +48,6 @@ require("cmp").config.formatting = {
 
 ``` lua
 lvim.builtin.cmp.formatting = {
-    format = require("tailwindcss-colorizer-cmp").formatter
+  format = require("tailwindcss-colorizer-cmp").formatter
 }
 ```
