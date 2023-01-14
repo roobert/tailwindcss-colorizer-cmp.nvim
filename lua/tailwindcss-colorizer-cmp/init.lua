@@ -1,5 +1,9 @@
 M = {}
 
+local config = {
+  color_hint_width = 2
+}
+
 M.formatter = function(entry, vim_item)
   -- FIXME:
   -- * we support lunarvim default cmp config until we can work out how to chain
@@ -118,12 +122,23 @@ M.formatter = function(entry, vim_item)
     vim_item.kind_hl_group = hl_group
 
     -- make the color square 2 chars wide
-    vim_item.kind = "XX"
+    vim_item.kind = string.rep("X", config.color_hint_width)
 
     return vim_item
   end
 
   return vim_item
+end
+
+M.setup = function(options)
+  if options == nil then
+    options = {}
+  end
+
+  -- merge user supplied options with defaults..
+  for k, v in pairs(options) do
+    config.options[k] = v
+  end
 end
 
 return M
