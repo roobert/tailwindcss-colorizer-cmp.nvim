@@ -137,7 +137,7 @@ M.setup = function(options)
 
   -- merge user supplied options with defaults..
   for k, v in pairs(options) do
-    config.options[k] = v
+    config[k] = v
   end
 end
 
