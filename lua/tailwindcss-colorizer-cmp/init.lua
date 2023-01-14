@@ -122,7 +122,7 @@ M.formatter = function(entry, vim_item)
     vim_item.kind_hl_group = hl_group
 
     -- make the color square 2 chars wide
-    vim_item.kind = string.rep("X", config.color_hint_width)
+    vim_item.kind = string.rep("X", config.color_square_width)
 
     return vim_item
   end
