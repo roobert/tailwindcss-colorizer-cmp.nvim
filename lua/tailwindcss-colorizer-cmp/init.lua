@@ -114,7 +114,11 @@ M.formatter = function(entry, vim_item)
 
     local hl_group = "lsp_documentColor_mf_" .. color
     vim.api.nvim_set_hl(0, hl_group, { fg = "#" .. color, bg = "#" .. color })
+
     vim_item.kind_hl_group = hl_group
+
+    -- make the color square 2 chars wide
+    vim_item.kind = "XX"
 
     return vim_item
   end
