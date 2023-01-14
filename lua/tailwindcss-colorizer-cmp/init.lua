@@ -1,5 +1,9 @@
 M = {}
 
+local config = {
+  color_hint_width = 2
+}
+
 M.formatter = function(entry, vim_item)
   -- FIXME:
   -- * we support lunarvim default cmp config until we can work out how to chain
@@ -114,12 +118,27 @@ M.formatter = function(entry, vim_item)
 
     local hl_group = "lsp_documentColor_mf_" .. color
     vim.api.nvim_set_hl(0, hl_group, { fg = "#" .. color, bg = "#" .. color })
+
     vim_item.kind_hl_group = hl_group
+
+    -- make the color square 2 chars wide
+    vim_item.kind = string.rep("X", config.color_square_width)
 
     return vim_item
   end
 
   return vim_item
+end
+
+M.setup = function(options)
+  if options == nil then
+    options = {}
+  end
+
+  -- merge user supplied options with defaults..
+  for k, v in pairs(options) do
+    config[k] = v
+  end
 end
 
 return M
