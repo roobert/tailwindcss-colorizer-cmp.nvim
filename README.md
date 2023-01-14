@@ -4,7 +4,21 @@
 
 A Neovim plugin to add [vs-code-style TailwindCSS color hints](https://tailwindcss.com/docs/editor-setup#intelli-sense-for-vs-code) to the `nvim-cmp` completion menu.
 
-## :rocket: Usage
+## :rocket: Installation
+
+### Packer.nvim
+
+``` lua
+use({ "roobert/tailwindcss-colorizer-cmp.nvim" })
+```
+
+### Lazy.nvim
+
+``` lua
+{ "roobert/tailwindcss-colorizer-cmp.nvim" }
+```
+
+## :hammer_and_wrench: Usage
 
 ### Standard Neovim
 
