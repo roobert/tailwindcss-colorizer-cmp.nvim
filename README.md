@@ -52,6 +52,6 @@ lvim.builtin.cmp.formatting = {
 }
 ```
 
-### Related
+## Related
 
 If you'd also like color highlighting in the buffer, please see: [NvChad/nvim-colorizer.lua](https://github.com/NvChad/nvim-colorizer.lua)
