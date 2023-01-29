@@ -51,3 +51,7 @@ lvim.builtin.cmp.formatting = {
   format = require("tailwindcss-colorizer-cmp").formatter
 }
 ```
+
+### Related
+
+If you'd also like color highlighting in the buffer, please see: [NvChad/nvim-colorizer.lua](https://github.com/NvChad/nvim-colorizer.lua)
