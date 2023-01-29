@@ -36,6 +36,8 @@ use({
 
 ## :hammer_and_wrench: Usage
 
+After installing the plugin, please ensure it's initialised with one of the following:
+
 ### Standard Neovim
 
 ``` lua
