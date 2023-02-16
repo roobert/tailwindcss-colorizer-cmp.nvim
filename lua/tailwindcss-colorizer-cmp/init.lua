@@ -90,13 +90,13 @@ M.formatter = function(entry, vim_item)
 		if #words == 2 and (words[2] == "white" or words[2] == "black") then
 			local color
 			if words[2] == "white" then
-				color = "#ffffff"
+				color = "ffffff"
 			else
-				color = "#000000"
+				color = "000000"
 			end
 
 			local hl_group = "lsp_documentColor_mf_" .. color
-			vim.api.nvim_set_hl(0, hl_group, { fg = color, bg = color })
+			vim.api.nvim_set_hl(0, hl_group, { fg = "#" .. color, bg = "#" .. color })
 			vim_item.kind_hl_group = hl_group
 
 			-- make the color square 2 chars wide
