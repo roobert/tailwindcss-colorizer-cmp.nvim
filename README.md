@@ -57,3 +57,5 @@ lvim.builtin.cmp.formatting = {
 ## :heart: Related
 
 If you'd also like color highlighting in the buffer, please see: [NvChad/nvim-colorizer.lua](https://github.com/NvChad/nvim-colorizer.lua)
+
+A nice video on adding various tailwind support to Neovim can be found [here](https://www.youtube.com/watch?v=_NiWhZeR-MY&t=43s).
