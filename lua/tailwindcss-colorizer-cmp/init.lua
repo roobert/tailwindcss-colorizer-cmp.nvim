@@ -1,3 +1,4 @@
+local utils = require "tailwindcss-colorizer-cmp.utils"
 M = {}
 
 local config = {
@@ -87,9 +88,17 @@ M.formatter = function(entry, vim_item)
 		-- FIXME:
 		-- handle special case of stuff like whatever-black/white
 		-- are there other cases like foo-bar-white
-		if #words == 2 and (words[2] == "white" or words[2] == "black") then
+    local bw_index
+    if
+      utils.check_extra_prefix(words[2])
+    then
+      bw_index = 3
+    else
+      bw_index = 2
+    end
+		if #words == bw_index and (words[bw_index] == "white" or words[bw_index] == "black") then
 			local color
-			if words[2] == "white" then
+			if words[bw_index] == "white" then
 				color = "ffffff"
 			else
 				color = "000000"
@@ -110,12 +119,7 @@ M.formatter = function(entry, vim_item)
 
 		local color_name, color_number
 		if
-			words[2] == "x"
-			or words[2] == "y"
-			or words[2] == "t"
-			or words[2] == "b"
-			or words[2] == "l"
-			or words[2] == "r"
+			utils.check_extra_prefix(words[2])
 		then
 			color_name = words[3]
 			color_number = words[4]
