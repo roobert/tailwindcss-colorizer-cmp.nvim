@@ -100,9 +100,6 @@ M.formatter = function(entry, vim_item)
 			color_number = words[3]
 		end
 
-		-- FIXME:
-		-- handle special case of stuff like whatever-black/white
-		-- are there other cases like foo-bar-white
 		if color_name == "white" or color_name == "black" then
 			local color
 			if color_name == "white" then
