@@ -1,6 +1,7 @@
 # :rainbow: TailwindCSS Colorizer CMP
 
-![tailwindcss-colorizer-cmp Screenshot](https://user-images.githubusercontent.com/226654/212444311-3dcf5f94-64d0-40a3-9b39-ec6df2296da9.gif)
+![tailwindcss-colorizer-cmp Screenshot](https://user-images.githubusercontent.com/226654/222544107-6c0164ad-63b5-429c-94cd-2800cb44dff2.gif)
+
 
 A Neovim plugin to add [vs-code-style TailwindCSS color hints](https://tailwindcss.com/docs/editor-setup#intelli-sense-for-vs-code) to the `nvim-cmp` completion menu.
 
