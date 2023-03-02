@@ -84,12 +84,25 @@ M.formatter = function(entry, vim_item)
 			table.insert(words, word)
 		end
 
-		-- FIXME:
-		-- handle special case of stuff like whatever-black/white
-		-- are there other cases like foo-bar-white
-		if #words == 2 and (words[2] == "white" or words[2] == "black") then
+		local color_name, color_number
+		if
+			words[2] == "x"
+			or words[2] == "y"
+			or words[2] == "t"
+			or words[2] == "b"
+			or words[2] == "l"
+			or words[2] == "r"
+		then
+			color_name = words[3]
+			color_number = words[4]
+		else
+			color_name = words[2]
+			color_number = words[3]
+		end
+
+		if color_name == "white" or color_name == "black" then
 			local color
-			if words[2] == "white" then
+			if color_name == "white" then
 				color = "ffffff"
 			else
 				color = "000000"
@@ -106,22 +119,6 @@ M.formatter = function(entry, vim_item)
 		elseif #words < 3 or #words > 4 then
 			-- doesn't look like this is a tailwind css color
 			return vim_item
-		end
-
-		local color_name, color_number
-		if
-			words[2] == "x"
-			or words[2] == "y"
-			or words[2] == "t"
-			or words[2] == "b"
-			or words[2] == "l"
-			or words[2] == "r"
-		then
-			color_name = words[3]
-			color_number = words[4]
-		else
-			color_name = words[2]
-			color_number = words[3]
 		end
 
 		if not color_name or not color_number then
