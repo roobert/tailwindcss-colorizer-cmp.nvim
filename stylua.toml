@@ -1,0 +1,6 @@
+indent_type = "Spaces"
+line_endings = "Unix"
+indent_width = 4
+column_width = 120
+quote_style = "AutoPreferDouble"
+call_parentheses = "Always"
