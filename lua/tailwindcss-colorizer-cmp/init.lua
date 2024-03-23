@@ -1,4 +1,4 @@
-M = {}
+local M = {}
 
 local config = {
 	color_square_width = 2,
